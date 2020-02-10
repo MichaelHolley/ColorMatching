@@ -1,5 +1,5 @@
 # ColorMatching
-A WPF ColorMatching-Game build with .Net Core.
+A WPF ColorMatching-Game build on .Net Core.
 
 This is my first app build with WPF-Scheme and I quiet liked it.
 
