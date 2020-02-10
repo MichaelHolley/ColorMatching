@@ -1,0 +1,40 @@
+﻿<Window x:Class="ColorMatching.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorMatching"
+        mc:Ignorable="d"
+        Title="ColorMatching-Game ~ by Michael Holley" Height="370" Width="410" ResizeMode="CanMinimize">
+
+    <StackPanel HorizontalAlignment="Center">
+        <WrapPanel x:Name="ColorsPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 10, 10, 10">
+            <Ellipse x:Name="MatchColor" Fill="Black" Width="100" Height="100" Margin="20, 0, 20, 0"/>
+            <Ellipse x:Name="UserColor" Fill="Green" Width="100" Height="100" Margin="20, 0, 20, 0"/>
+        </WrapPanel>
+        <Label x:Name="AccuracyPercentage" HorizontalAlignment="Center" FontSize="15"></Label>
+        <Separator Margin="10, 10, 10, 10"/>
+        <StackPanel x:Name="SlidersPanel">
+            <DockPanel x:Name="RedGroup" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="370">
+                <Label DockPanel.Dock="Left" Width="50" FontWeight="Bold" Content="Red"/>
+                <Slider x:Name="RedSlider" Width="255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="ColorSlider_ValueChanged"/>
+                <TextBox x:Name="RedValueTF" DockPanel.Dock="Right" Text="{Binding Value, ElementName=RedSlider, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" TextWrapping="Wrap" Width="50" Height="20"/>
+            </DockPanel>
+            <DockPanel x:Name="GreenGroup" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="370">
+                <Label DockPanel.Dock="Left" Width="50" FontWeight="Bold" Content="Green"/>
+                <Slider x:Name="GreenSlider" Width="255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="ColorSlider_ValueChanged"/>
+                <TextBox x:Name="GreenValueTF" DockPanel.Dock="Right" Text="{Binding Value, ElementName=GreenSlider, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" TextWrapping="Wrap" Width="50" Height="20"/>
+            </DockPanel>
+            <DockPanel x:Name="BlueGroup" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="370">
+                <Label DockPanel.Dock="Left" Width="50" FontWeight="Bold" Content="Blue"/>
+                <Slider x:Name="BlueSlider" Width="255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="ColorSlider_ValueChanged"/>
+                <TextBox x:Name="BlueValueTF" DockPanel.Dock="Right" Text="{Binding Value, ElementName=BlueSlider, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" TextWrapping="Wrap" Width="50" Height="20"/>
+            </DockPanel>
+        </StackPanel>
+        <Separator Margin="10, 10, 10, 10"/>
+        <WrapPanel x:Name="ButtonPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="CheckButton" Width="85" Margin="10,10,10,10" Click="CheckButton_Click">Check Input</Button>
+            <Button x:Name="NewColorButton" Width="85" Margin="10,10,10,10" Click="NewColorButton_Click">New Color</Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>
